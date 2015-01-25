@@ -117,8 +117,20 @@ body {
 	}
 }
 
+/* Wrap */
+.wrap-l {
+	width: 100%;
+	margin: 0 auto;
+	@media (min-width: 1367px) {
+		width: 1200px;
+	}
+}
+
 /* Who am I */
 .about {
+	.gp-r > div {
+		height: auto;
+	}
 	.title-head {
 		h1 {
 			&:before {
@@ -136,7 +148,82 @@ body {
 			
 		}
 	}
+	.photo {
+		position: relative;
+		background: #333;
+		overflow: hidden;
+		.content {
+			padding: 0;
+			text-align: right;
+			img {
+				@media (max-width: $screenlarge) {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+			}
+		}
+	}
+	.gray {
+		padding: 0;
+		overflow: hidden;
+		img {
+			width: 100%;
+		}
+	}
+	.content {
+		padding: 20px 30px;
+		color: #f5f5f5;
+		font-weight: 300;
+		h3 {
+			color: #777;
+			font-size: 24px;
+			font-weight: 300;
+			text-align: center;
+		}
+		h4 {
+			margin: 0 0 10px;
+			font-weight: 300;
+			strong {
+				font-weight: 400;
+			}
+		}
+		p {
+			line-height: 24px;
+		}
+	}
+	.sosmed {
+		margin: 30px 0 0;
+		padding: 0;
+		list-style-type: none;
+		&:after {
+			display: table;
+			content: "";
+			clear: both;
+		}
+		li {
+			float: left;
+			a {
+				color: #f5f5f5;
+				padding: 0 10px;
+				font-size: 36px;
+			}
+		}
+		li.first{
+			a {
+				padding: 0 10px 0 0;
+			}
+		}
+	}
 }
 
+/* Grayscale */
+img.grayscale {
+	-webkit-filter: grayscale(1);
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: url(#grayscale);
+	filter: gray;
+}
 
 /* ===== End of Content ===== */

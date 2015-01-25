@@ -22,10 +22,17 @@
 	<%= render "layouts/footer" %>
 
 	<div class="backtop">
-			<
-	</script>p>Top</p>
+		<p>Top</p>
 		<i class="backtop-ico"> </i>
 	</div>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:0;">    
+    	<filter id="greyscale">
+	    	<feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0
+	                                          0.3333 0.3333 0.3333 0 0
+	                                          0.3333 0.3333 0.3333 0 0
+	                                          0      0      0      1 0"/>
+	    </filter>
+	</svg>
 	<script type="text/javascript">
 		//Preloader
 		rotate = 1;
@@ -33,6 +40,7 @@
 			rotate = 0;
 			$('#preloader').fadeOut(1000);
 		}
+
 		$(document).ready(function(){
 			// calculate height 
 			var screen_ht = $(window).height();

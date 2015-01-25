@@ -17,11 +17,21 @@
 
 $(function(){
 	$(window).on('load ready resize', function(){
+		// Welcome
 		if($('.welcome').length) {
 			var ya = $(window).height(), yb = $('.welcome .board-design').height();
 			$('.welcome').css('height', ya);
 			$('.board-design').hide();
 			$('.board-design').delay('1600').fadeIn().animate({top: -yb});
+		}
+
+		// Who am I
+		if($('.about').length) {
+			// col
+			var xcol = $('.gp-r > div:first').width();
+			//var ycol = xcol/1.65;
+			var ycol = $('.gp-r > div:first').height();
+			$('.gp-r > div').css('height', ycol+20);
 		}
 	});
 });

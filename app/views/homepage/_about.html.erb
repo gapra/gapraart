@@ -4,21 +4,42 @@
 			<h1><span class="icon about"></span> Who <strong>am I</strong></h1>
 		</div>
 	</div>
-	<div class="gp-r">
-		<div class="gp-c2 green">
-			<div class="content">
-				<h4>My name is <strong>Galih Pranowo</strong>.</h4>
-				<p>I'm graphic, web, UI, animation designer, frontend developer and flash programmer. Implement awesome ideas into full-scale design projects.</p>
+	<div class="wrap-l">
+		<div class="gp-r">
+			<div class="gp-c2 green">
+				<div class="content">
+					<h4>My name is <strong>Galih Pranowo</strong>.</h4>
+					<p>I'm graphic, web, UI, animation designer, frontend developer and flash programmer. Implement awesome ideas into full-scale design projects.</p>
+					<ul class="sosmed">
+						<li class="first"><%= link_to('#', target: '_blank') do %><i class="fa fa-facebook"></i><% end %></li>
+						<li><%= link_to('#', target: '_blank') do %><i class="fa fa-twitter"></i><% end %></li>
+						<li><%= link_to('#', target: '_blank') do %><i class="fa fa-google-plus"></i><% end %></li>
+						<li><%= link_to('#', target: '_blank') do %><i class="fa fa-linkedin"></i><% end %></li>
+						<li><%= link_to('#', target: '_blank') do %><i class="fa fa-behance"></i><% end %></li>
+						<li class="last"><%= link_to('#', target: '_blank') do %><i class="fa fa-github"></i><% end %></li>
+					</ul>
+				</div>
 			</div>
-		</div>
-		<div class="gp-c2 photo">
-			<div class="content">
-				<%= image_tag("my-vector.svg") %>
+			<div class="gp-c2 photo">
+				<div class="content">
+					<%= image_tag("http://www.gapraart.com/assets/images/about-me.png") %>
+				</div>
 			</div>
-		</div>
-		<div class="gp-c2 green">
-			<div class="content">
-				<p>Not just to achieve what is desired. Working give happiness ourselves, it is expected by the nature of us. Machines are never turned on will easily rust, never sharpened knife will not sharp anymore to cut. And not only the equipment that is used to be stored in a dusty crate.</p>
+			<div class="gp-c2 green">
+				<div class="content">
+					<p>Not just to achieve what is desired. Working give happiness ourselves, it is expected by the nature of us. Machines are never turned on will easily rust, never sharpened knife will not sharp anymore to cut. And not only the equipment that is used to be stored in a dusty crate.</p>
+				</div>
+			</div>
+			<div class="gp-c2 gray">
+				<%= image_tag("http://www.gapraart.com/assets/images/pens.jpg", class: "grayscale") %>
+			</div>
+			<div class="gp-c2 white">
+				<div class="content">
+					<h3>Jangan berhenti berkarya, atau kita akan segera menjadi tua dan tidak berguna.</h3>
+				</div>
+			</div>
+			<div class="gp-c2 gray">
+				<%= image_tag("http://www.gapraart.com/assets/images/mac-glasses-small.jpg", class: "grayscale") %>
 			</div>
 		</div>
 	</div>
