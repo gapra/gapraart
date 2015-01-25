@@ -1,0 +1,53 @@
+/*! Preloader */
+#preloader {
+  background: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #393939;
+  z-index: 999999
+}
+#loading_load{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  position:fixed;
+  z-index: 9999999999
+}
+#loading_load div{
+  width: 400px;
+  margin: auto;
+  height: 3px;
+  text-align: center;
+  box-shadow:0px 0px 5px #494949;
+  overflow: hidden
+}
+#preloader div {
+  width: 128px;
+  margin: auto;
+  height: 128px;
+  text-align: center;
+  /*border: 4px solid #111;*/
+  overflow: hidden
+}
+#preloader_image {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+#loaderimage {
+  position: relative;
+  left: 0;
+  top: -10px
+}
+/* en of preloader  */

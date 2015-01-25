@@ -1,0 +1,24 @@
+/* ===== Header ===== */
+.navi-green {
+	.container {
+    	background: #00b28b;
+    }
+}
+.navi-green {
+	.for-main-menu > li {
+	    display: table-cell;
+	    width: 1%;
+	    float: none;
+	    text-align: center;
+	    text-transform: uppercase;
+	    a {
+	    	color: #fff;
+	    }
+	    a.branch {
+	    	text-transform: none;
+    		background: #019b79;
+	    }
+	}
+}
+
+/* ===== End of Header ===== */
