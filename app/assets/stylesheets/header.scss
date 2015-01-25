@@ -1,7 +1,15 @@
+@import "variables";
+@import "mixins";
+
 /* ===== Header ===== */
 .navi-green {
+	position: absolute;
+	top: 0;
+	z-index: 999;
+	width: 100%;
+	min-height: inherit;
 	.container {
-    	background: #00b28b;
+    	background: $colormain;
     }
 }
 .navi-green {
@@ -13,6 +21,7 @@
 	    text-transform: uppercase;
 	    a {
 	    	color: #fff;
+	    	font-weight: 300;
 	    }
 	    a.branch {
 	    	text-transform: none;

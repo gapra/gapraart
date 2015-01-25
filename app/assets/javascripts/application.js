@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+	$(window).on('load ready resize', function(){
+		if($('.welcome').length) {
+			var ya = $(window).height(), yb = $('.welcome .board-design').height();
+			$('.welcome').css('height', ya);
+			$('.board-design').hide();
+			$('.board-design').delay('1600').fadeIn().animate({top: -yb});
+		}
+	});
+});

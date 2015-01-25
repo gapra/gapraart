@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+@import "mixins";
+
 /* ===== Content ===== */
 
 body {
@@ -25,5 +28,115 @@ body {
 	position:relative;
 	margin:0px;
 }
+
+/* Welcome */
+.welcome {
+	overflow: hidden;
+	.caption {
+		position: relative;
+		top: 30%;
+		text-transform: uppercase;
+		h1, h2, h3, h4, h5 {
+			font-family: 'Raleway', sans-serif;
+		}
+		h1 {
+			background: rgba(0,178,139,0.7);
+			color: #fff;
+			font-size: 72px;
+			font-weight: 300;
+			text-align: center;
+			line-height: 1;
+			display: block;
+			width: 750px;
+			margin: 15px auto;
+		}
+		h2 {
+			background: rgba(0,0,0,0.7);
+			color: #fff;
+			font-size: 36px;
+			font-weight: 300;
+			display: inline;
+			padding: 3px 9px;
+		}
+		h4 {
+			background: #000;
+			color: #fff;
+			font-size: 20px;
+			font-weight: 300;
+			float: right;
+			padding: 0 10px;
+			margin: 0;
+		}
+	}
+	.board-design {
+		position: relative;
+		z-index: 9;
+		.board-items {
+			background: rgba(0,178,139,0.7);
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			li {
+				display: table-cell;
+				width: 1%;
+				padding: 30px 0 20px;
+				label {
+					text-transform: uppercase;
+					font-size: 20px;
+					color: #fff;
+				}
+			}
+			.icon {
+				display: block;
+				background-image: url(sprites-ico.png);
+				background-repeat: no-repeat;
+				width: 52px;
+				height: 50px;
+				margin: 0 auto 15px;
+			}
+			.icon.graphic { background-position: -62px -109px; }
+			.icon.website { background-position: -62px -218px; }
+			.icon.ui { background-position: -55px -165px; }
+			.icon.anim { background-position: -57px 0; }
+			.icon.code { background-position: -62px -56px; }
+		}
+	}
+}
+
+/* Title head */
+.title-head {
+	padding: 40px 0;
+	h1 {
+		font-family: 'Raleway', sans-serif;
+		font-size: 32px;
+		font-weight: 400;
+		text-transform: uppercase;
+		strong {
+			font-weight: 600;
+		}
+	}
+}
+
+/* Who am I */
+.about {
+	.title-head {
+		h1 {
+			&:before {
+				width: 72px;
+				height: 72px;
+				background-image: url(sprites-ico.png);
+				background-repeat: no-repeat;
+				background-position: -126px -396px;
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		.icon {
+			
+		}
+	}
+}
+
 
 /* ===== End of Content ===== */
