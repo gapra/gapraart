@@ -35,7 +35,7 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
