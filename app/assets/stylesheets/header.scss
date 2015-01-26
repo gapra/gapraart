@@ -8,15 +8,11 @@
 	z-index: 999;
 	width: 100%;
 	min-height: inherit;
-	.container {
-    	background: $colormain;
-    }
-}
-.navi-green {
 	.for-main-menu > li {
 	    display: table-cell;
 	    width: 1%;
 	    float: none;
+	    background: $colormain;
 	    text-align: center;
 	    text-transform: uppercase;
 	    a {
@@ -27,6 +23,19 @@
 	    	text-transform: none;
     		background: #019b79;
 	    }
+	}
+	li.first {
+		background: transparent;
+		a {
+			@include border-radius-bl(7px);
+		}
+	}
+	li.last {
+		background: transparent;
+		a {
+			background: $colormain;
+			@include border-radius-br(7px);
+		}
 	}
 }
 
