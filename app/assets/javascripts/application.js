@@ -28,10 +28,10 @@ $(function(){
 		// Who am I
 		if($('.about').length) {
 			// col
-			var xcol = $('.gp-r > div:first').width();
+			var xcol = $('.about .gp-r > div:first').width();
 			//var ycol = xcol/1.65;
-			var ycol = $('.gp-r > div:first').height();
-			$('.gp-r > div').css('height', ycol+20);
+			var ycol = $('.about .gp-r > div:first').height();
+			$('.about .gp-r > div').css('height', ycol+20);
 		}
 	});
 });
