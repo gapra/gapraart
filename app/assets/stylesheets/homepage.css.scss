@@ -228,6 +228,7 @@ h4.sub-title-head {
 
 /* What I can */
 .whatican {
+	background: #f9f9f9;
 	.title-head {
 		padding: 40px 0 20px;
 		h1 {
@@ -255,9 +256,9 @@ h4.sub-title-head {
 	}
 	.icon.graphic { background-position: 0px -110px; }
 	.icon.website { background-position: -1px -218px; }
-	.icon.ui { background-position: 0 0; }
-	.icon.anim { background-position: 0 0; }
-	.icon.code { background-position: 0 0; }
+	.icon.ui { background-position: 6px -165px; }
+	.icon.anim { background-position: 5px 0; }
+	.icon.code { background-position: 0 -56px; }
 	.desc {
 		h4 {
 			color: $colormain;
@@ -276,6 +277,78 @@ h4.sub-title-head {
 	}
 	.content {
 		padding: 0 15px 20px 15px;
+	}
+	.skills {
+		background-image: url(http://www.gapraart.com/assets/images/wall.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		padding: 30px 0 60px;
+		.skill {
+			padding: 5px 15px;
+		}
+		.skill-container {
+			position: relative;
+			background: #fff;
+			height: 30px;
+			.skill-bar {
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				background: #7ad3c0;
+				color: #fff;
+				text-align: right;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+.myworks {
+	.title-head {
+		h1 {
+			&:before {
+				background-position: -126px -238px;
+			}
+		}
+	}
+	.tab-menu {
+		margin: 0 0 30px;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+		li {
+			display: inline-block;
+			a {
+				display: block;
+				padding: 7px 20px;
+				border: 1px solid $colormain;
+				color: $colormain;
+				&:hover {
+					background: $colormain;
+					color: #fff;
+				}
+			}
+		}
+	}
+	.slide-works {
+		.slide-works-content {
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			.work {
+				width: 20%;
+				float: left;
+				a {
+					display: block;
+				}
+				img {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 
