@@ -6,51 +6,52 @@
 	</div>
 	<div class="container">
 		<ul class="tab-menu">
-			<li><a href="#">All</a></li>
-			<li><a href="#">Graphic designs</a></li>
-			<li><a href="#">Website designs</a></li>
-			<li><a href="#">UI/UX designs</a></li>
-			<li><a href="#">Frontend development</a></li>
-			<li><a href="#">Flash / Animation</a></li>
+			<li><%= link_to('All', '#', class: "all") %></li>
+			<li><%= link_to('Graphic designs', '#', class: "graphic") %></li>
+			<li><%= link_to('Website designs', '#', class: "website") %></li>
+			<li><%= link_to('UI/UX designs', '#', class: "ui") %></li>
+			<li><%= link_to('Frontend development', '#', class: "frontend") %></li>
+			<li><%= link_to('Flash / Animation', '#', class: "flash") %></li>
 		</ul>
 	</div>
 	<div class="slide-works">
 		<div class="slide-works-content">
-			<ul>
+			<ul class="gallery">
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/iphone6.jpg", class: "grayscale ui") %><% end %>
+					<%= link_to('#ramadhan-ui', class: "open-work ui") do %><%= image_tag("http://www.gapraart.com/assets/images/iphone6.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/for-iphone.jpg", class: "grayscale ui") %><% end %>
+					<%= link_to('#worldchat-ui', class: "open-work ui") do %><%= image_tag("http://www.gapraart.com/assets/images/for-iphone.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/evigalih-site.jpg", class: "grayscale website") %><% end %>
+					<%= link_to('#evigalih-site', class: "open-work website frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/evigalih-site.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/getrealty-theme.jpg", class: "grayscale website") %><% end %>
+					<%= link_to('#getrealty', class: "open-work website") do %><%= image_tag("http://www.gapraart.com/assets/images/getrealty-theme.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/mywidz-logo.jpg", class: "grayscale graphic") %><% end %>
+					<%= link_to('#mywidz', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/mywidz-logo.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/gapraart2014.jpg", class: "grayscale website") %><% end %>
+					<%= link_to('#gapraart', class: "open-work website frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/gapraart2014.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/ambigram.jpg", class: "grayscale graphic") %><% end %>
+					<%= link_to('#ambigram', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/ambigram.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/fashion-fest.jpg", class: "grayscale graphic") %><% end %>
+					<%= link_to('#fashion-fest', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/fashion-fest.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/thumb-getrealty.jpg", class: "grayscale website") %><% end %>
+					<%= link_to('#getrealty2', class: "open-work website frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/thumb-getrealty.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/ligashop-logo.jpg", class: "grayscale graphic") %><% end %>
+					<%= link_to('#ligashop', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/ligashop-logo.jpg", class: "grayscale") %><% end %>
 				</li>
 				<li class="work">
-					<%= link_to('#') do %><%= image_tag("http://www.gapraart.com/assets/images/wongndeso-site.jpg", class: "grayscale website") %><% end %>
+					<%= link_to('#wongndeso', class: "open-work frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/wongndeso-site.jpg", class: "grayscale") %><% end %>
 				</li>
 			</ul>
+			<%= render "homepage/myworks_content" %>
 		</div>
 		<div class="slide-works-controls">
 		</div>

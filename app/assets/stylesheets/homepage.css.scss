@@ -305,6 +305,7 @@ h4.sub-title-head {
 	}
 }
 .myworks {
+	min-height: 700px;
 	.title-head {
 		h1 {
 			&:before {
@@ -337,12 +338,20 @@ h4.sub-title-head {
 				margin: 0;
 				padding: 0;
 				list-style-type: none;
+				&:after {
+					display: table;
+					content: "";
+					clear: both;
+				}
 			}
 			.work {
 				width: 20%;
 				float: left;
+				@include transition(all .4s ease-in-out);
 				a {
 					display: block;
+					overflow: hidden;
+					@include transition(all .4s ease-in-out);
 				}
 				img {
 					width: 100%;
@@ -351,14 +360,73 @@ h4.sub-title-head {
 		}
 	}
 }
+.work-wrap {
+	hr {
+		margin: 10px 0;
+	}
+	h4 {
+		color: #999;
+		font-weight: normal;
+	}
+}
 
 /* Grayscale */
 img.grayscale {
 	-webkit-filter: grayscale(1);
 	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(1);
+	-moz-filter: grayscale(100%);
 	filter: grayscale(100%);
-	filter: url(#grayscale);
+	/* filter: url(#grayscale); */
 	filter: gray;
 }
 
+
 /* ===== End of Content ===== */
+
+/* 
+
+====== 3d unfold ======
+
+*/
+.mfp-3d-unfold {
+  .mfp-content {
+    perspective: 2000px; 
+  }
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateY(-60deg);
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: rotateY(60deg);
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    } 
+  }  
+}

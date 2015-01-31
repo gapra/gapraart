@@ -36,6 +36,7 @@ group :production do
 end
 
 # gem 'font-awesome-sass'
+gem 'magnific-popup-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
