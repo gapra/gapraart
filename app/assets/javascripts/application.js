@@ -16,6 +16,7 @@
 //= require_tree .
 
 $(function(){
+	$('#slides').superslides();
 	$(window).on('load ready resize', function(){
 		// Welcome
 		if($('.welcome').length) {
@@ -38,6 +39,7 @@ $(function(){
 		if($('.myworks').length) {
 			var xli = $('.slide-works-content .work').width()-0.5;
 			var x = $('.slide-works-content .work a').width(), y = x/1.52;
+			var owlW = $('#gallery-work .owl-wrapper').width()/3;
 			$('.slide-works .slide-works-content .work').each(function (){
 				//var x = $('a', this).width(), y = x/1.52;
 				$('a', this).css('height', y);
@@ -48,15 +50,42 @@ $(function(){
 				});
 				$('a').attr('data-effect', 'mfp-3d-unfold');
 			});
+			if($('.slide-works-controls').length) {
+				var xcontrol = $('.slide-works-controls a').outerWidth() * 2;
+				$('.slide-works-controls').css('width', xcontrol);
+			}
+			$('.slide-works-content').css('height', Math.round(y)*3);
+			if($('.slide-works').length) {
+				var a = $('.gallery').height(), b = $('.slide-works-content').height(), c = a-b;
+				for(var i = 0; i < y; i++) {
+					$('.slide-works-controls .next').hover(function(){
+						$('.gallery').animate({top: -c+"px"}, 2000);
+					}, function(){
+						$('.gallery').stop(true);
+					});
+
+					$('.slide-works-controls .prev').hover(function(){
+						$('.gallery').animate({top: 0}, 2000);
+					}, function(){
+						$('.gallery').stop(true);
+					});
+				}
+				/*$('.slide-works-controls .next').click(function(){
+					$('.gallery').animate({top: -y+"px"});
+				});	*/
+			}
+
 			// Tabs menu
 			$('.tab-menu').each(function(){
 				var dur = 400;
 				$('li a.all', this).click(function(){
+					$('.gallery').animate({top: 0}, 2000);
 					$('.work a').animate({height: y, width: x, opacity: 1}, dur);
 					$('.work a').closest('li').animate({height: y, width: xli, opacity: 1}, dur);
 					return(false);
 				});
 				$('li a.graphic', this).click(function(){
+					$('.gallery').animate({top: 0}, 2000);
 					$('.work a').animate({height: y, width: x, opacity: 1}, dur);
 					$('.work a').closest('li').animate({height: y, width: xli, opacity: 1}, dur);
 					$('.work a').not($('.graphic')).animate({height: 0, width: 0, opacity: 0}, dur);
@@ -64,6 +93,7 @@ $(function(){
 					return(false);
 				});
 				$('li a.website', this).click(function(){
+					$('.gallery').animate({top: 0}, 2000);
 					$('.work a').animate({height: y, width: x, opacity: 1}, dur);
 					$('.work a').closest('li').animate({height: y, width: xli, opacity: 1}, dur);
 					$('.work a').not($('.website')).animate({height: 0, width: 0, opacity: 0}, dur);
@@ -71,6 +101,7 @@ $(function(){
 					return(false);
 				});
 				$('li a.ui', this).click(function(){
+					$('.gallery').animate({top: 0}, 2000);
 					$('.work a').animate({height: y, width: x, opacity: 1}, dur);
 					$('.work a').closest('li').animate({height: y, width: xli, opacity: 1}, dur);
 					$('.work a').not($('.ui')).animate({height: 0, width: 0, opacity: 0}, dur);
@@ -78,6 +109,7 @@ $(function(){
 					return(false);
 				});
 				$('li a.frontend', this).click(function(){
+					$('.gallery').animate({top: 0}, 2000);
 					$('.work a').animate({height: y, width: x, opacity: 1}, dur);
 					$('.work a').closest('li').animate({height: y, width: xli, opacity: 1}, dur);
 					$('.work a').not($('.frontend')).animate({height: 0, width: 0, opacity: 0}, dur);
@@ -85,6 +117,7 @@ $(function(){
 					return(false);
 				});
 				$('li a.flash', this).click(function(){
+					$('.gallery').animate({top: 0}, 2000);
 					$('.work a').animate({height: y, width: x, opacity: 1}, dur);
 					$('.work a').closest('li').animate({height: y, width: xli, opacity: 1}, dur);
 					$('.work a').not($('.flash')).animate({height: 0, width: 0, opacity: 0}, dur);
@@ -93,6 +126,30 @@ $(function(){
 				});
 			});
 		}
+
+		// My works slide
+		/*var owl = $('#gallery-work');
+		owl.owlCarousel({
+			items : 5, //10 items above 1000px browser width
+			itemsDesktop : [1000,4], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,3], // betweem 900px and 601px
+			itemsTablet: [600,2], //2 items between 600 and 0
+			itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+		});
+
+		// Custom Navigation Events
+		$(".next").click(function(){
+			owl.trigger('owl.next');
+		});
+		$(".prev").click(function(){
+			owl.trigger('owl.prev');
+		});
+		$(".play").click(function(){
+			owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+		});
+		$(".stop").click(function(){
+			owl.trigger('owl.stop');
+		});*/
 	});
 
 	// Modal my works

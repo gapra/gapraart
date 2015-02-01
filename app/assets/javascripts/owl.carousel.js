@@ -326,7 +326,8 @@ if (typeof Object.create !== "function") {
                 width = base.$owlItems.length * base.itemWidth;
 
             base.$owlWrapper.css({
-                "width": width * 2,
+                //"width": width * 2,
+                "width": width / 3,
                 "left": 0
             });
             base.appendItemsSizes();
@@ -776,7 +777,8 @@ if (typeof Object.create !== "function") {
 
             base.isCssFinish = false;
             base.$owlWrapper.stop(true, true).animate({
-                "left" : value
+                //"left" : value
+                "left" : value*2
             }, {
                 duration : speed || base.options.slideSpeed,
                 complete : function () {

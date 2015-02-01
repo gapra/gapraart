@@ -16,44 +16,66 @@
 	</div>
 	<div class="slide-works">
 		<div class="slide-works-content">
-			<ul class="gallery">
-				<li class="work">
+			<ul id="gallery-work" class="gallery owl-carousel owl-theme">
+				<li class="work item">
 					<%= link_to('#ramadhan-ui', class: "open-work ui") do %><%= image_tag("http://www.gapraart.com/assets/images/iphone6.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#worldchat-ui', class: "open-work ui") do %><%= image_tag("http://www.gapraart.com/assets/images/for-iphone.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#evigalih-site', class: "open-work website frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/evigalih-site.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#getrealty', class: "open-work website") do %><%= image_tag("http://www.gapraart.com/assets/images/getrealty-theme.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#mywidz', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/mywidz-logo.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#gapraart', class: "open-work website frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/gapraart2014.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#ambigram', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/ambigram.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#fashion-fest', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/fashion-fest.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#getrealty2', class: "open-work website frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/thumb-getrealty.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#ligashop', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/ligashop-logo.jpg", class: "grayscale") %><% end %>
 				</li>
-				<li class="work">
+				<li class="work item">
 					<%= link_to('#wongndeso', class: "open-work frontend") do %><%= image_tag("http://www.gapraart.com/assets/images/wongndeso-site.jpg", class: "grayscale") %><% end %>
 				</li>
+				<li class="work item">
+					<%= link_to('#thanety-vector', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/thanety-graphic.jpg", class: "grayscale") %><% end %>
+				</li>
+				<li class="work item">
+					<%= link_to('#flash-flipbook', class: "open-work flash") do %><%= image_tag("http://www.gapraart.com/assets/images/flash-flipbook.jpg", class: "grayscale") %><% end %>
+				</li>
+				<li class="work item">
+					<%= link_to('#propel-logo', class: "open-work graphic") do %><%= image_tag("http://www.gapraart.com/assets/images/propel-logo.jpg", class: "grayscale") %><% end %>
+				</li>
+				<li class="work item">
+					<%= link_to('#flash-mobilegame', class: "open-work flash") do %><%= image_tag("http://www.gapraart.com/assets/images/flash-mobilegame.jpg", class: "grayscale") %><% end %>
+				</li>
+
 			</ul>
 			<%= render "homepage/myworks_content" %>
 		</div>
 		<div class="slide-works-controls">
+			<%= link_to('#prev', class: "btn prev") do %><i class="fa fa-angle-up"></i><% end %>
+			<%= link_to('#next', class: "btn next") do %><i class="fa fa-angle-down"></i><% end %>
+		</div>
+	</div>
+	<div class="green work-info">
+		<div class="container">
+			<h3>If you want see more complete works, feel free to contact me</h3>
+			<p>you can see my repository on <%= link_to('https://github.com/gapra', 'https://github.com/gapra', target: "_blank") %> | please mail me, gapraart@gmail.com or just click the button below.</p>
+			<%= link_to('contact me', '#', class: "gp-btn more-works-btn") %>
 		</div>
 	</div>
 </section>
