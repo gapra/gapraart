@@ -453,6 +453,97 @@ h4.sub-title-head {
 	}
 }
 
+// employment
+.employment {
+	padding-bottom: 60px;
+	.title-head {
+		h1 {
+			&:before {
+				background-position: -126px -159px;
+			}
+		}
+	}
+	.gp-c3.border-r {
+		padding-right: 0;
+	}
+	.gp-c3.border-l {
+		padding-left: 0;
+	}
+	.gp-c6 {
+		padding-bottom: 0;
+	}
+	.gp-c4, .gp-c2 {
+		padding-top: 0;
+	}
+	h3 {
+		margin: 0 0 10px;
+		color: $colormain;
+		font-weight: 300;
+	}
+	h4 {
+		font-weight: 600;
+		font-size: 18px;
+		margin: 0;
+	}
+	.date {
+		border-bottom: 1px solid $colormain;
+		padding-bottom: 5px;
+	}
+	.border-l {
+		border-left: 2px solid $colormain;
+		.gp-c2 {
+			padding-left: 0;
+		}
+		.gp-c4 {
+			padding-bottom: 0;
+		}
+		.gp-c6 {
+			padding-left: 5px
+		}
+	}
+	.border-r {
+		border-right: 2px solid $colormain;
+		margin-right: -2px;
+		.gp-c2 {
+			padding-right: 0;
+		}
+	}
+}
+
+// Author of Book
+.book {
+	background: #f5f5f5;
+	padding-bottom: 60px;
+	.title-head {
+		h1 {
+			&:before {
+				background-position: -126px -1px;
+			}
+		}
+	}
+	.book-image {
+		width: 80px;
+		height: 100px;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		overflow: hidden;
+	}
+	.book-info {
+		a {
+			color: inherit;
+		}
+	}
+	h4 {
+		font-size: 16px;
+		font-weight: 600;
+		margin: 0 0 5px;
+	}
+	p { margin: 0; }
+	p.publisher { color: #999; }
+	p.isbn { font-weight: bold; }
+}
+
 /* Grayscale */
 img.grayscale {
 	-webkit-filter: grayscale(1);
@@ -463,6 +554,7 @@ img.grayscale {
 	/* filter: url(#grayscale); */
 	filter: gray;
 }
+.img-fit { width: 100%; }
 
 /* 
  * 	Core Owl Carousel CSS File
