@@ -18,6 +18,7 @@
 $(function(){
 	$('#slides').superslides();
 	$(window).on('load ready resize', function(){
+
 		// Welcome
 		if($('.welcome').length) {
 			var ya = $(window).height(), yb = $('.welcome .board-design').height();
@@ -127,29 +128,23 @@ $(function(){
 			});
 		}
 
-		// My works slide
-		/*var owl = $('#gallery-work');
-		owl.owlCarousel({
-			items : 5, //10 items above 1000px browser width
-			itemsDesktop : [1000,4], //5 items between 1000px and 901px
-			itemsDesktopSmall : [900,3], // betweem 900px and 601px
-			itemsTablet: [600,2], //2 items between 600 and 0
-			itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-		});
-
-		// Custom Navigation Events
-		$(".next").click(function(){
-			owl.trigger('owl.next');
-		});
-		$(".prev").click(function(){
-			owl.trigger('owl.prev');
-		});
-		$(".play").click(function(){
-			owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
-		});
-		$(".stop").click(function(){
-			owl.trigger('owl.stop');
-		});*/
+		// Book
+		if($('.book').length) {
+			$('.book-image').each(function(){
+				$('a img', this).hover(function(){
+					$(this).removeClass('grayscale');
+				},function(){
+					$(this).addClass('grayscale');
+				});
+			});
+			$('.gp-c2').each(function(){
+				$('.book-info a', this).hover(function(){
+					$('.book-image img', this).removeClass('grayscale');
+				}, function(){
+					$('.book-image img', this).addClass('grayscale');
+				});
+			});
+		}
 	});
 
 	// Modal my works

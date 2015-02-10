@@ -532,6 +532,9 @@ h4.sub-title-head {
 	.book-info {
 		a {
 			color: inherit;
+			&:hover {
+				color: $colormain;
+			}
 		}
 	}
 	h4 {
