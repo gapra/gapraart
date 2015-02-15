@@ -2,41 +2,86 @@
 @import "mixins";
 
 /* ===== Header ===== */
-.navi-green {
+.navi-blue {
 	position: absolute;
 	top: 0;
 	z-index: 999;
 	width: 100%;
 	min-height: inherit;
+	.navi-menu {
+		width: 100%;
+	}
 	.for-main-menu > li {
 	    display: table-cell;
 	    width: 1%;
 	    float: none;
-	    background: $colormain;
+	    background: rgba(56,173,214,0.7);
 	    text-align: center;
 	    text-transform: uppercase;
 	    a {
 	    	color: #fff;
 	    	font-weight: 300;
+	    	&:hover {
+	    		color: #444;
+	    	}
 	    }
 	    a.branch {
 	    	text-transform: none;
-    		background: #019b79;
+    		background: rgba(56,173,214,0.7);
 	    }
 	}
 	li.first {
 		background: transparent;
 		a {
+			background: rgba(56,173,214,0.7);
 			@include border-radius-bl(7px);
+			&:hover {
+				background: #fff;
+			}
 		}
 	}
 	li.last {
 		background: transparent;
 		a {
-			background: $colormain;
+			background: rgba(56,173,214,0.7);
 			@include border-radius-br(7px);
+			&:hover {
+				background: #fff;
+			}
 		}
 	}
+}
+.nav-fixed {
+	position: fixed;
+	z-index: 99;
+	background: #fff;
+	width: 100%;
+	border-bottom: 3px solid #ccc;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li {
+			float: left;
+			a {
+				display: block;
+				padding: 10px 15px;
+				border-left: 1px solid #ddd;
+				color: #777;
+				font-size: 12px;
+				text-transform: uppercase;
+				&:hover {
+					color: #38add6;
+				}
+			}
+		}
+	}
+	.visited {
+		background: #eee;
+	}
+}
+.navi-blue.fixed {
+	position: fixed;
 }
 
 /* ===== End of Header ===== */

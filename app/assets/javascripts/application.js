@@ -17,6 +17,28 @@
 
 $(function(){
 	$('#slides').superslides();
+	// Navigation
+	$(document).ready(function() {
+		$('.navi').onePageNav({
+			currentClass: 'visited',
+			changeHash: true,
+			scrollSpeed: 750,
+    		scrollThreshold: 0.5,
+			easing: 'swing'
+		});
+	});
+	$('.nav-fixed').hide();
+	$(window).scroll(function(){
+		var navpos = $('#whoami'), fixednav = navpos.offset();
+		if($(this).scrollTop() > fixednav.top-50) {
+			//$('.navi-blue').addClass('fixed').fadeIn();
+			$('.nav-fixed').fadeIn();
+		} else {
+			//$('.navi-blue').removeClass('fixed');
+			$('.nav-fixed').fadeOut();
+		}
+	});
+
 	$(window).on('load ready resize', function(){
 
 		// Welcome
@@ -180,5 +202,32 @@ $(function(){
 			}
 		},
 		midClick: true
+	});
+
+	/*! back to top */
+	var offset = 520;
+	var dur = 800;
+	$(window).scroll(function(){
+		if($(this).scrollTop() > offset){
+			$('.backtop').fadeIn(dur);
+		}else{
+			$('.backtop').fadeOut(dur);
+		}
+	});
+	$('.backtop').click(function(event){
+		event.preventDefault();
+		$('html, body').animate({scrollTop: 0}, dur);
+		return false;
+	});
+	$('.backtop').hover(function(){
+		$(this).animate({
+			bottom: '40px',
+			opacity: '0.9'
+		}, 300);
+	}, function(){
+		$(this).stop(true).animate({
+			bottom: '30px',
+			opacity: '0.6'
+		}, 300);
 	});
 });
