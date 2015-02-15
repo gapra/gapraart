@@ -585,6 +585,9 @@ h4.sub-title-head {
 			a {
 				font-size: 2.6em;
 				color: #fff;
+				&:hover {
+					color: #222;
+				}
 			}
 		}
 	}

@@ -26,6 +26,17 @@ $(function(){
     		scrollThreshold: 0.5,
 			easing: 'swing'
 		});
+		$('.navi-fixed').onePageNav({
+			currentClass: 'visited',
+			changeHash: true,
+			scrollSpeed: 750,
+    		scrollThreshold: 0.5,
+			easing: 'swing'
+		});
+		var cp = $('#contact'), cppos = cp.offset();
+		$('.work-info a[href="#contact"]').click(function(){
+			$('html, body').animate({ scrollTop: cppos.top }, 'slow');
+		});
 	});
 	$('.nav-fixed').hide();
 	$(window).scroll(function(){
