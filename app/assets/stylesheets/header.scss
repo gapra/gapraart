@@ -2,67 +2,76 @@
 @import "mixins";
 
 /* ===== Header ===== */
-.navi-blue {
+.nav-fixed {
 	position: absolute;
-	top: 0;
-	z-index: 999;
+	z-index: 99;
 	width: 100%;
-	min-height: inherit;
-	.navi-menu {
+	@include transition(all .3s ease-in-out);
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 		width: 100%;
-	}
-	.for-main-menu > li {
-	    display: table-cell;
-	    width: 1%;
-	    float: none;
-	    background: rgba(56,173,214,0.7);
-	    text-align: center;
-	    text-transform: uppercase;
-	    a {
-	    	color: #fff;
-	    	font-weight: 300;
-	    	&:hover {
-	    		color: #444;
-	    	}
-	    }
-	    a.branch {
-	    	text-transform: none;
-    		background: rgba(56,173,214,0.7);
-	    }
-	}
-	li.first {
-		background: transparent;
-		a {
-			background: rgba(56,173,214,0.7);
-			@include border-radius-bl(7px);
-			&:hover {
-				background: #fff;
+		background: rgba(56, 173, 214, 0.7);
+		@include transition(all .3s ease-in-out);
+		@include border-radius-br(7px);
+		@include border-radius-bl(7px);
+		&:after {
+			display: table;
+			content: "";
+			clear: both;
+		}
+		li {
+			display: table-cell;
+			width: 1%;
+			@include transition(all .3s ease-in-out);
+			a {
+				display: block;
+				padding: 10px 15px;
+				color: #fff;
+				text-align: center;
+				font-weight: 300;
+				text-transform: uppercase;
+				&:hover {
+					background: #38add6;
+					color: #fff;
+				}
 			}
 		}
-	}
-	li.last {
-		background: transparent;
-		a {
-			background: rgba(56,173,214,0.7);
-			@include border-radius-br(7px);
-			&:hover {
-				background: #fff;
+		li.first {
+			a {
+				&:hover {
+					@include border-radius-bl(7px);
+				}
+			}
+		}
+		li.last {
+			a {
+				&:hover {
+					@include border-radius-br(7px);
+				}
 			}
 		}
 	}
 }
-.nav-fixed {
+.nav-fixed.fixed {
 	position: fixed;
 	z-index: 99;
 	background: #fff;
 	width: 100%;
 	border-bottom: 3px solid #ccc;
+	@include transition(all .3s ease-in-out);
 	ul {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
+		background: transparent;
+		@include transition(all .3s ease-in-out);
 		li {
+			display: block;
 			float: left;
+			width: auto;
+			@include transition(all .3s ease-in-out);
 			a {
 				display: block;
 				padding: 10px 15px;
@@ -72,6 +81,7 @@
 				text-transform: uppercase;
 				&:hover {
 					color: #38add6;
+					background: #eee;
 				}
 			}
 		}

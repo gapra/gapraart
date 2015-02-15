@@ -38,15 +38,17 @@ $(function(){
 			$('html, body').animate({ scrollTop: cppos.top }, 'slow');
 		});
 	});
-	$('.nav-fixed').hide();
+	//$('.nav-fixed').hide();
 	$(window).scroll(function(){
 		var navpos = $('#whoami'), fixednav = navpos.offset();
 		if($(this).scrollTop() > fixednav.top-50) {
 			//$('.navi-blue').addClass('fixed').fadeIn();
-			$('.nav-fixed').fadeIn();
+			//$('.nav-fixed').fadeIn();
+			$('.nav-fixed').addClass('fixed');
 		} else {
 			//$('.navi-blue').removeClass('fixed');
-			$('.nav-fixed').fadeOut();
+			//$('.nav-fixed').fadeOut();
+			$('.nav-fixed').removeClass('fixed');
 		}
 	});
 
