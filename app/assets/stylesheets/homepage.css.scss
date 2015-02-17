@@ -44,11 +44,19 @@ body, h1, h2, h3, h4, h5, h6 {
 .carblue {
 	background: #38add6;
 }
+.container {
+	@media (min-width: 1400px) {
+		width: 90%;
+	}
+}
 
 /* Welcome */
 .welcome {
 	overflow: hidden;
 	.container {
+		@media (min-width: 1400px) {
+			text-align: center;
+		}
 		@media (max-width: 1023px) {
 			text-align: center;
 		}
@@ -70,6 +78,9 @@ body, h1, h2, h3, h4, h5, h6 {
 			display: block;
 			width: 750px;
 			margin: 15px auto;
+			@media (max-width: 1023px) {
+				width: 100%;
+			}
 		}
 		h2 {
 			background: rgba(0,0,0,0.7);
@@ -87,6 +98,14 @@ body, h1, h2, h3, h4, h5, h6 {
 			float: right;
 			padding: 0 10px;
 			margin: 0;
+			@media (min-width: 1400px) {
+				display: inline;
+				float: none;
+			}
+			@media (max-width: 1023px) {
+				float: none;
+				display: inline;
+			}
 		}
 	}
 	.board-design {
@@ -180,6 +199,9 @@ h4.sub-title-head {
 		position: relative;
 		background: #333;
 		overflow: hidden;
+		@media (max-width: 1023px) {
+			height: 300px !important;
+		}
 		.content {
 			padding: 0;
 			text-align: right;
@@ -195,6 +217,9 @@ h4.sub-title-head {
 	.gray {
 		padding: 0;
 		overflow: hidden;
+		@media (max-width: 1023px) {
+			height: 300px !important;
+		}
 		img {
 			width: 100%;
 			@media (min-width: 1024px) and (max-width: 1200px) {
@@ -276,6 +301,9 @@ h4.sub-title-head {
 		margin-right: 20px;
 		border: 2px solid $colormain;
 		@include border-radius(50%);
+		@media (max-width: 1023px) {
+			margin-top: 0;
+		}
 	}
 	.icon.graphic { background-position: 0px -110px; }
 	.icon.website { background-position: -1px -218px; }
@@ -332,6 +360,15 @@ h4.sub-title-head {
 			}
 		}
 	}
+	.gp-c3 {
+		@media (max-width: 1023px) {
+			&:after {
+				display: table;
+				content: "";
+				clear: both;
+			}
+		}
+	}
 }
 .myworks {
 	min-height: 700px;
@@ -347,8 +384,19 @@ h4.sub-title-head {
 		padding: 0;
 		list-style-type: none;
 		text-align: center;
+		@media (max-width: 1023px) {
+			&:after {
+				display: table;
+				content: "";
+				clear: both;
+			}
+		}
 		li {
 			display: inline-block;
+			@media (max-width: 1023px) {
+				display: block;
+				float: left;
+			}
 			a {
 				display: block;
 				padding: 7px 20px;
@@ -357,6 +405,17 @@ h4.sub-title-head {
 				&:hover {
 					background: $colormain;
 					color: #fff;
+				}
+				@media (max-width: 1023px) {
+					border-right: 0;
+					padding: 7px 9px;
+				}
+			}
+		}
+		li.last {
+			a {
+				@media (max-width: 1023px) {
+					border-right: 1px solid $colormain;
 				}
 			}
 		}
@@ -387,6 +446,9 @@ h4.sub-title-head {
 				width: 20%;
 				float: left;
 				@include transition(all .4s ease-in-out);
+				@media (max-width: 1023px) {
+					width: 25%;
+				}
 				a {
 					display: block;
 					overflow: hidden;
@@ -524,6 +586,10 @@ h4.sub-title-head {
 	.border-r {
 		border-right: 2px solid $colormain;
 		margin-right: -2px;
+		@media (max-width: 1023px) {
+			margin-right: 0;
+			border-right: 0;
+		}
 		.gp-c2 {
 			padding-right: 0;
 		}
@@ -565,6 +631,15 @@ h4.sub-title-head {
 	p { margin: 0; }
 	p.publisher { color: #999; }
 	p.isbn { font-weight: bold; }
+	.gp-c2 {
+		@media (max-width: 1023px) {
+			&:after {
+				display: table;
+				content: "";
+				clear: both;
+			}
+		}
+	}
 }
 
 // Contact
@@ -574,6 +649,9 @@ h4.sub-title-head {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
+	@media (max-width: 1023px) {
+		background-attachment: inherit;
+	}
 	.title-head {
 		h1 {
 			&:before {
