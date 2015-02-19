@@ -37,9 +37,35 @@ $(function(){
 		$('.work-info a[href="#contact"]').click(function(){
 			$('html, body').animate({ scrollTop: cppos.top }, 'slow');
 		});
+
+		if($(window).width() < 768) {
+			$('header').append('<div class="m-menu"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>');
+			$('.fa-times').hide();
+			$('.m-menu .fa-bars').click(function(){
+				$('.m-menu').closest('header').append('<div class="menu-body-overlay"></div>');
+				$('body').addClass('body-overlay');
+				$('.nav-fixed.fixed').animate({right: 0});
+				$('.m-menu').animate({right: 180});
+				$(this).fadeOut(function(){
+					$('.fa-times').fadeIn();
+				});
+				//$('.m-menu i.fa').removeClass('fa-bars').addClass('fa-times');
+			});
+			$('.m-menu .fa-times').click(function(){
+				$('.nav-fixed.fixed').animate({right: '-180px'}, function(){
+					$('.menu-body-overlay').remove();
+					$('body').removeClass('body-overlay');
+				});
+				$('.m-menu').animate({right: 10});
+				$(this).fadeOut(function(){
+					$('.fa-bars').fadeIn();
+				});
+				//$('.m-menu i.fa').removeClass('fa-times').addClass('fa-bars');
+			});
+		}
 	});
 	//$('.nav-fixed').hide();
-	if($(window).width() >= 1024) {
+	if($(window).width() > 1024) {
 		$(window).scroll(function(){
 			var navpos = $('#whoami'), fixednav = navpos.offset();
 			if($(this).scrollTop() > fixednav.top-50) {
@@ -54,7 +80,7 @@ $(function(){
 		});
 	}
 	
-	if($(window).width() < 1024) {
+	if($(window).width() <= 1024) {
 		$('.nav-fixed').addClass('fixed');
 	}
 
@@ -63,9 +89,11 @@ $(function(){
 		// Welcome
 		if($('.welcome').length) {
 			var ya = $(window).height(), yb = $('.welcome .board-design').height();
-			$('.welcome').css('height', ya);
-			$('.board-design').hide();
-			$('.board-design').delay('1600').fadeIn().animate({top: -yb});
+			if($(window).width() >= 768) {
+				$('.welcome').css('height', ya);
+				$('.board-design').hide();
+				$('.board-design').delay('1600').fadeIn().animate({top: -yb});
+			}
 		}
 
 		// Who am I
@@ -74,7 +102,9 @@ $(function(){
 			var xcol = $('.about .gp-r > div:first').width();
 			//var ycol = xcol/1.65;
 			var ycol = $('.about .gp-r > div:first').height();
-			$('.about .gp-r > div').css('height', ycol+20);
+			if($(window).width() >= 768) {
+				$('.about .gp-r > div').css('height', ycol+20);
+			}
 		}
 
 		// My Works
@@ -96,7 +126,12 @@ $(function(){
 				var xcontrol = $('.slide-works-controls a').outerWidth() * 2;
 				$('.slide-works-controls').css('width', xcontrol);
 			}
-			$('.slide-works-content').css('height', Math.round(y)*3);
+			//$('.slide-works-content').css('height', Math.round(y)*3);
+			if($(window).width() >= 768) {
+				$('.slide-works-content').css('height', Math.round(y)*3);
+			} else {
+				$('.slide-works-content').css('height', Math.round(y)*4);
+			}
 			if($('.slide-works').length) {
 				var a = $('.gallery').height(), b = $('.slide-works-content').height(), c = a-b;
 				for(var i = 0; i < y; i++) {

@@ -57,7 +57,7 @@ body, h1, h2, h3, h4, h5, h6 {
 		@media (min-width: 1400px) {
 			text-align: center;
 		}
-		@media (max-width: 1023px) {
+		@media (max-width: $screenmedium) {
 			text-align: center;
 		}
 	}
@@ -65,6 +65,9 @@ body, h1, h2, h3, h4, h5, h6 {
 		position: relative;
 		top: 30%;
 		text-transform: uppercase;
+		@media (max-width: $screensmall) {
+			top: 35%;
+		}
 		h1, h2, h3, h4, h5 {
 			font-family: 'Raleway', sans-serif;
 		}
@@ -78,8 +81,12 @@ body, h1, h2, h3, h4, h5, h6 {
 			display: block;
 			width: 750px;
 			margin: 15px auto;
-			@media (max-width: 1023px) {
+			@media (max-width: $screenmedium) {
 				width: 100%;
+			}
+			@media (max-width: $screenxsmall) {
+				font-size: 28px;
+				padding: 5px 0;
 			}
 		}
 		h2 {
@@ -89,6 +96,9 @@ body, h1, h2, h3, h4, h5, h6 {
 			font-weight: 300;
 			display: inline;
 			padding: 3px 9px;
+			@media (max-width: $screenxsmall) {
+				font-size: 24px;
+			}
 		}
 		h4 {
 			background: #000;
@@ -102,20 +112,31 @@ body, h1, h2, h3, h4, h5, h6 {
 				display: inline;
 				float: none;
 			}
-			@media (max-width: 1023px) {
+			@media (max-width: $screenmedium) {
 				float: none;
 				display: inline;
+			}
+			@media (max-width: $screenxsmall) {
+				font-size: 16px;
 			}
 		}
 	}
 	.board-design {
 		position: relative;
 		z-index: 9;
+		.container {
+			@media (max-width: $screensmall) {
+				padding: 0;
+			}
+		}
 		.board-items {
 			background: rgba(56,173,214,0.7);
 			margin: 0;
 			padding: 0;
 			text-align: center;
+			@media (max-width: $screensmall) {
+				display: none;
+			}
 			li {
 				display: table-cell;
 				width: 1%;
@@ -164,6 +185,13 @@ body, h1, h2, h3, h4, h5, h6 {
 			display: inline-block;
 			margin-right: 20px;
 			vertical-align: middle;
+			@media (max-width: $screenxsmall) {
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		@media (max-width: $screenxsmall) {
+			text-align: center;
 		}
 	}
 }
@@ -172,6 +200,9 @@ h4.sub-title-head {
 	font-size: 20px;
 	margin: 0 0 20px;
 	color: #777;
+	@media (max-width: 479px) {
+		text-align: center;
+	}
 }
 
 /* Wrap */
@@ -199,8 +230,11 @@ h4.sub-title-head {
 		position: relative;
 		background: #333;
 		overflow: hidden;
-		@media (max-width: 1023px) {
-			height: 300px !important;
+		@media (max-width: $screenmedium) {
+			/* height: 300px !important; */
+		}
+		@media (max-width: $screensmall) {
+			padding: 0;
 		}
 		.content {
 			padding: 0;
@@ -211,20 +245,31 @@ h4.sub-title-head {
 					bottom: 0;
 					right: 0;
 				}
+				@media (max-width: $screensmall) {
+					position: relative;
+				}
 			}
 		}
 	}
 	.gray {
 		padding: 0;
 		overflow: hidden;
-		@media (max-width: 1023px) {
-			height: 300px !important;
+		@media (max-width: $screenmedium) {
+			/* height: 300px !important; */
 		}
 		img {
 			width: 100%;
 			@media (min-width: 1024px) and (max-width: 1200px) {
 				width: auto;
 				height: 100%;
+			}
+			@media (max-width: $screenmedium) {
+				width: auto;
+				height: 100%;
+			}
+			@media (max-width: $screensmall) {
+				width: 100%;
+				height: auto;
 			}
 		}
 	}
@@ -301,8 +346,12 @@ h4.sub-title-head {
 		margin-right: 20px;
 		border: 2px solid $colormain;
 		@include border-radius(50%);
-		@media (max-width: 1023px) {
+		@media (max-width: $screenmedium) {
 			margin-top: 0;
+		}
+		@media (max-width: 479px) {
+			float: none;
+			margin: 0 auto;
 		}
 	}
 	.icon.graphic { background-position: 0px -110px; }
@@ -311,6 +360,9 @@ h4.sub-title-head {
 	.icon.anim { background-position: 5px 0; }
 	.icon.code { background-position: 0 -56px; }
 	.desc {
+		@media (max-width: 479px) {
+			text-align: center;
+		}
 		h4 {
 			color: $colormain;
 			font-size: 20px;
@@ -361,7 +413,7 @@ h4.sub-title-head {
 		}
 	}
 	.gp-c3 {
-		@media (max-width: 1023px) {
+		@media (max-width: $screenmedium) {
 			&:after {
 				display: table;
 				content: "";
@@ -384,16 +436,19 @@ h4.sub-title-head {
 		padding: 0;
 		list-style-type: none;
 		text-align: center;
-		@media (max-width: 1023px) {
+		@media (max-width: $screenmedium) {
 			&:after {
 				display: table;
 				content: "";
 				clear: both;
 			}
 		}
+		@media (max-width: $screensmall) {
+			display: none;
+		}
 		li {
 			display: inline-block;
-			@media (max-width: 1023px) {
+			@media (max-width: $screenmedium) {
 				display: block;
 				float: left;
 			}
@@ -406,7 +461,7 @@ h4.sub-title-head {
 					background: $colormain;
 					color: #fff;
 				}
-				@media (max-width: 1023px) {
+				@media (max-width: $screenmedium) {
 					border-right: 0;
 					padding: 7px 9px;
 				}
@@ -414,7 +469,7 @@ h4.sub-title-head {
 		}
 		li.last {
 			a {
-				@media (max-width: 1023px) {
+				@media (max-width: $screenmedium) {
 					border-right: 1px solid $colormain;
 				}
 			}
@@ -446,8 +501,11 @@ h4.sub-title-head {
 				width: 20%;
 				float: left;
 				@include transition(all .4s ease-in-out);
-				@media (max-width: 1023px) {
-					width: 25%;
+				@media (max-width: $screenmedium) {
+					width: 33.33%;
+				}
+				@media (max-width: $screensmall) {
+					width: 50%;
 				}
 				a {
 					display: block;
@@ -544,9 +602,15 @@ h4.sub-title-head {
 	}
 	.gp-c3.border-r {
 		padding-right: 0;
+		@media (max-width: $screenmedium) {
+			padding-right: 10px;
+		}
 	}
 	.gp-c3.border-l {
 		padding-left: 0;
+		@media (max-width: $screenmedium) {
+			padding-left: 10px;
+		}
 	}
 	.gp-c6 {
 		padding-bottom: 0;
@@ -558,6 +622,9 @@ h4.sub-title-head {
 		margin: 0 0 10px;
 		color: $colormain;
 		font-weight: 300;
+		@media (max-width: $screensmall) {
+			margin: 30px 0 10px;
+		}
 	}
 	h4 {
 		font-weight: 600;
@@ -567,31 +634,81 @@ h4.sub-title-head {
 	.date {
 		border-bottom: 1px solid $colormain;
 		padding-bottom: 5px;
+		@media (max-width: $screenmedium) {
+			position: absolute;
+			top: 15px;
+			right: 20px;
+			border-bottom: 0;
+		}
+		@media (max-width: $screensmall) {
+			right: inherit;
+			left: 20px;
+		}
 	}
 	.date.present {
 		color: #38add6;
 	}
 	.border-l {
 		border-left: 2px solid $colormain;
+		@media (max-width: $screenmedium) {
+			border-left: 0;
+			margin-top: 0 !important;
+		}
 		.gp-c2 {
 			padding-left: 0;
+			@media (max-width: $screenmedium) {
+				padding: 0 0 0 10px;
+				position: static;
+			}
 		}
 		.gp-c4 {
 			padding-bottom: 0;
+			@media (max-width: $screenmedium) {
+				padding: 0 10px 0;
+			}
 		}
 		.gp-c6 {
-			padding-left: 5px
+			padding-left: 5px;
+			@media (max-width: $screenmedium) {
+				padding-left: 0;
+				padding-top: 0;
+			}
+			.gp-c2 {
+				@media (max-width: $screenmedium) {
+					display: none;
+				}
+			}
 		}
 	}
 	.border-r {
 		border-right: 2px solid $colormain;
 		margin-right: -2px;
-		@media (max-width: 1023px) {
+		@media (max-width: $screenmedium) {
 			margin-right: 0;
+			margin-top: 0 !important;
 			border-right: 0;
 		}
 		.gp-c2 {
 			padding-right: 0;
+			@media (max-width: $screenmedium) {
+				position: static;
+				padding-bottom: 0;
+			}
+		}
+		.gp-c4 {
+			@media (max-width: $screenmedium) {
+				padding-bottom: 0;
+			}
+		}
+		.gp-c6 {
+			@media (max-width: $screenmedium) {
+				padding-top: 0;
+			}
+		}
+	}
+	.gp-c3.border-r, .gp-c3.border-l {
+		@media (max-width: $screenmedium) {
+			border-bottom: 1px solid $colormain;
 		}
 	}
 }
@@ -632,7 +749,7 @@ h4.sub-title-head {
 	p.publisher { color: #999; }
 	p.isbn { font-weight: bold; }
 	.gp-c2 {
-		@media (max-width: 1023px) {
+		@media (max-width: $screenmedium) {
 			&:after {
 				display: table;
 				content: "";
@@ -647,9 +764,9 @@ h4.sub-title-head {
 	background-image: url(http://assets.gapraart.com/images/coffe-wall-bw.jpg?_subject_uid=375864436&w=AACSCBKzEBduIzCB43zKntxkx2K__ieOHkaNKpj_w4lipQ);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	background-attachment: fixed;
-	@media (max-width: 1023px) {
+	@media (max-width: $screenmedium) {
 		background-attachment: inherit;
 	}
 	.title-head {
@@ -662,6 +779,9 @@ h4.sub-title-head {
 	h3 {
 		margin: 10px 0;
 		color: #111;
+		@media (max-width: 479px) {
+			font-size: 20px;
+		}
 	}
 	.sosmed {
 		list-style-type: none;
@@ -678,6 +798,9 @@ h4.sub-title-head {
 			a {
 				font-size: 2.6em;
 				color: #fff;
+				@media (max-width: 479px) {
+					font-size: 2.4em;
+				}
 				&:hover {
 					color: #222;
 				}
