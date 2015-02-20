@@ -11,19 +11,23 @@
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-		width: 100%;
-		background: rgba(56, 173, 214, 0.7);
+		width: auto;
+		float: left;
+		background: #000;
 		@include transition(all .3s ease-in-out);
 		@include border-radius-br(7px);
 		@include border-radius-bl(7px);
+		@media (max-width: $screensmall) {
+			width: 100%;
+		}
 		&:after {
 			display: table;
 			content: "";
 			clear: both;
 		}
 		li {
-			display: table-cell;
-			width: 1%;
+			display: block;
+			float: left;
 			@include transition(all .3s ease-in-out);
 			a {
 				display: block;
